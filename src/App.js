@@ -10,6 +10,7 @@ function App() {
     {
       id: 1,
       title: 'Mini Tanks War',
+      image: '/images/Mini_Tanks_War.png',
       category: 'game',
       section: 'personal',
       description: 'Üretken Akademi bitirme projesi , Etraftaki hareket eden tankları yok et.',
@@ -22,6 +23,7 @@ function App() {
     {
       id: 2,
       title: 'Helix Jump',
+      image: '/images/Helix_Jump.png',
       category: 'game',
       section: 'personal',
       description: 'Zıplayan bir topu , platform arasındaki deliklerden aşağı düşür puanları kazan.',
@@ -34,6 +36,7 @@ function App() {
     {
       id: 3,
       title: 'Balloon Popping Game',
+      image: '/images/Balloon_Popping_Game.jpeg',
       category: 'game',
       section: 'personal',
       description: 'Süre bitmeden renkli balonları patlat',
@@ -46,6 +49,7 @@ function App() {
     {
       id: 4,
       title: 'Brick Breaker',
+      image: '/images/Brick_Breaker.png',
       category: 'game',
       section: 'personal',
       description: 'Tuğları kırarak diğer bölümlere geç. Dikkat et diğer bölümler daha zor',
@@ -58,6 +62,7 @@ function App() {
       {
       id: 5,
       title: 'Labyrinth Flower',
+      image: '/images/Labyrinth_Flower.png',
       category: 'game',
       section: 'personal',
       description: 'Tuğları kırarak diğer bölümlere geç. Dikkat et diğer bölümler daha zor',
@@ -70,6 +75,7 @@ function App() {
       {
       id: 6,
       title: 'Colored Balls',
+      image: '/images/Colored_Balls.png',
       category: 'game',
       section: 'personal',
       description: 'Tuğları kırarak diğer bölümlere geç. Dikkat et diğer bölümler daha zor',
@@ -81,8 +87,9 @@ function App() {
     },
     // EKİP PROJELERİ
     {
-      id: 5,
+      id: 7,
       title: 'The Ice Is Watching',
+      image: '/images/The_Ice_Is_Watching.png',
       category: 'game',
       section: 'team',
       description: 'Full-stack e-commerce uygulaması. React ve Node.js ile inşa edilmiş. 3 kişilik ekipte çalışıldı.',
@@ -91,24 +98,23 @@ function App() {
       link: 'https://store.steampowered.com/app/4367760/The_Ice_is_Watching',
       year: 2026,
       role: 'Programmer, Tester',
-      team: ['3x Programmer', '1x Artist', '1x Designer']
     },
     {
-      id: 6,
-      title: 'Mobile Game - Quest Adventure',
-      category: 'software',
+      id: 8,
+      title: 'Kargo/Market Simülatör',
+      category: 'game',
       section: 'team',
       description: 'RPG türü mobil oyun. 5 kişilik game studio tarafından geliştirildi. 100K+ indirilmiş.',
       icon: '📱',
-      technologies: ['Flutter', 'Dart', 'Firebase'],
+      technologies: ['Unity', 'C#'],
       link: 'https://github.com',
-      year: 2023,
-      role: 'Gameplay Programmer',
-      team: ['3x Programmer', '1x Artist', '1x Designer']
+      year: 2026,
+      role: 'Gameplay Programmer',    
     },
     {
-      id: 7,
-      title: 'Blog Site',
+      id: 20,
+      title: 'Blog Site',     
+      image: '/images/Blog_Site.png',
       category: 'software',
       section: 'personal',
       description: 'Kurumsal veri analiz platformu. Gerçek zamanlı dashboard ve raporlama sistemi.',
@@ -119,8 +125,9 @@ function App() {
       role: 'Full Stack Developer',
     },
     {
-      id: 8,
+      id: 21,
       title: 'Food Site',
+      image: '/images/Food_Site.png',
       category: 'software',
       section: 'personal',
       description: 'Kurumsal veri analiz platformu. Gerçek zamanlı dashboard ve raporlama sistemi.',
@@ -199,7 +206,13 @@ function App() {
             {filteredProjects.length > 0 ? (
               filteredProjects.map(project => (
                 <div key={project.id} className="project-card">
-                  <div className="project-image">{project.icon}</div>
+                  <div className="project-image">
+                    {project.image ? (
+                      <img src={project.image} alt={project.title} />
+                    ) : (
+                      <div style={{ fontSize: "3.5rem" }}>{project.icon}</div>
+                    )}
+                  </div>
                   <div className="project-content">
                     <div className="project-header">
                       <div>
