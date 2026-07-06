@@ -10,7 +10,7 @@ function App() {
     {
       id: 1,
       title: 'Mini Tanks War',
-      image: '/images/Mini_Tanks_War.png',
+      image: process.env.PUBLIC_URL + '/images/Mini_Tanks_War.png',
       category: 'game',
       section: 'personal',
       description: 'Üretken Akademi bitirme projesi , Etraftaki hareket eden tankları yok et.',
@@ -22,7 +22,7 @@ function App() {
     {
       id: 2,
       title: 'Helix Jump',
-      image: '/images/Helix_Jump.png',
+      image: process.env.PUBLIC_URL + '/images/Helix_Jump.png',
       category: 'game',
       section: 'personal',
       description: 'Zıplayan Topu boşluklardan geçir, kırmızı engellere çarpmadan aşağı in, skor kazan.',
@@ -34,7 +34,7 @@ function App() {
     {
       id: 3,
       title: 'Balloon Popping Game',
-      image: '/images/Balloon_Popping_Game.jpeg',
+      image: process.env.PUBLIC_URL + '/images/Balloon_Popping_Game.jpeg',
       category: 'game',
       section: 'personal',
       description: 'Süre bitmeden tüm balonları patlat ve yüksek skor yap.',
@@ -46,7 +46,7 @@ function App() {
     {
       id: 4,
       title: 'Brick Breaker',
-      image: '/images/Brick_Breaker.png',
+      image: process.env.PUBLIC_URL + '/images/Brick_Breaker.png',
       category: 'game',
       section: 'personal',
       description: 'Tüm tuğlaları kır ve bölümleri tamamla, ileriki bölümlerde farklı renk tuğlalar seni bekliyor.',
@@ -58,7 +58,7 @@ function App() {
       {
       id: 5,
       title: 'Labyrinth Flower',
-      image: '/images/Labyrinth_Flower.png',
+      image: process.env.PUBLIC_URL + '/images/Labyrinth_Flower.png',
       category: 'game',
       section: 'personal',
       description: 'Labirentte yolunu bul, çiçeğe ulaş ve diğer bölüme geç.',
@@ -70,7 +70,7 @@ function App() {
       {
       id: 6,
       title: 'Colored Balls',
-      image: '/images/Colored_Balls.png',
+      image: process.env.PUBLIC_URL + '/images/Colored_Balls.png',
       category: 'game',
       section: 'personal',
       description: 'Aynı renkteki toplarla etkileşime gir ve en yüksek skoru yap.',
@@ -83,7 +83,7 @@ function App() {
     {
       id: 7,
       title: 'The Ice Is Watching',
-      image: '/images/The_Ice_Is_Watching.png',
+      image: process.env.PUBLIC_URL + '/images/The_Ice_Is_Watching.png',
       category: 'game',
       section: 'team',
       description: 'Full-stack e-commerce uygulaması. React ve Node.js ile inşa edilmiş. 3 kişilik ekipte çalışıldı.',
@@ -95,7 +95,7 @@ function App() {
     {
       id: 8,
       title: 'Kargo/Market Simülatör',
-      image: '/images/Cargo_Simulator.png',
+      image: process.env.PUBLIC_URL + '/images/Cargo_Simulator.png',
       category: 'game',
       section: 'team',
       description: 'Marketini büyüt, siparişleri hazırla ve teslimat yap.',
@@ -107,7 +107,7 @@ function App() {
     {
       id: 20,
       title: 'Blog Site',     
-      image: '/images/Blog_Site.png',
+      image: process.env.PUBLIC_URL + '/images/Blog_Site.png',
       category: 'software',
       section: 'personal',
       description: 'Blog yazıları paylaş, kategorilere göz at ve içerikleri keşfet.',
@@ -119,7 +119,7 @@ function App() {
     {
       id: 21,
       title: 'Food Site',
-      image: '/images/Food_Site.png',
+      image: process.env.PUBLIC_URL + '/images/Food_Site.png',
       category: 'software',
       section: 'personal',
       description: 'Lezzetli yemekleri,tatlıları keşfet ve kategorileri inceleyip sipariş ver.',
