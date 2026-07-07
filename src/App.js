@@ -100,7 +100,7 @@ function App() {
       section: 'team',
       description: 'Marketini büyüt, siparişleri hazırla ve teslimat yap.',
       technologies: ['Unity', 'C#'],
-      link: 'https://github.com',
+      link: 'https://normsyt1.itch.io/cargomarket-simulator',
       year: 2026,
       role: 'Programmer, Tester, Level Designer',    
     },
@@ -233,8 +233,12 @@ function App() {
                         <span key={idx} className="tech-tag">{tech}</span>
                       ))}
                     </div>
-
-                    <a href={project.link} className="project-link">
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="project-link"
+                    >
                       Projeye git →
                     </a>
                   </div>
