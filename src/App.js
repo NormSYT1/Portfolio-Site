@@ -86,7 +86,7 @@ function App() {
       image: process.env.PUBLIC_URL + '/images/The_Ice_Is_Watching.png',
       category: 'game',
       section: 'team',
-      description: 'Full-stack e-commerce uygulaması. React ve Node.js ile inşa edilmiş. 3 kişilik ekipte çalışıldı.',
+      description: 'Donmuş bir dağ evinde yaşayan kız, yaratıktan kaçmaya çalışıp sevgilisini bulmaya çalışır.',
       technologies: ['Unity', 'C#'],
       link: 'https://store.steampowered.com/app/4367760/The_Ice_is_Watching',
       year: 2026,
@@ -263,7 +263,7 @@ function App() {
                 <span className="contact-icon">📧</span>
                 <div>
                   <p className="contact-label">Email</p>
-                  <a href="mailto:seninmailin@example.com" className="contact-value">
+                  <a href="seyitalashan123@gmail.com" className="contact-value">
                     seyitalashan123@gmail.com
                   </a>
                 </div>
@@ -300,23 +300,6 @@ function App() {
               </div>
             </div>
 
-            <form
-              className="contact-form"
-              onSubmit={(e) => {
-                e.preventDefault();
-                const name = e.target.name.value;
-                const email = e.target.email.value;
-                const message = e.target.message.value;
-                window.location.href = `mailto:seninmailin@example.com?subject=Portfolio İletişim - ${name}&body=${message} (Gönderen: ${email})`;
-              }}
-            >
-              <input type="text" name="name" placeholder="Adınız" className="contact-input" required />
-              <input type="email" name="email" placeholder="Email adresiniz" className="contact-input" required />
-              <textarea name="message" placeholder="Mesajınız" className="contact-textarea" rows="5" required></textarea>
-              <button type="submit" className="contact-submit-btn">
-                Mesaj Gönder →
-              </button>
-            </form>
           </div>
         </div>
       </section>
