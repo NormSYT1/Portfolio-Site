@@ -1,3 +1,26 @@
+:root {
+  --bg-dark: #0f172a;
+  --bg-medium: #1e293b;
+  --accent-blue: #60a5fa;
+  --accent-blue-dark: #3b82f6;
+  --accent-blue-darker: #2563eb;
+  --accent-blue-light: #93c5fd;
+  --accent-purple: #a855f7;
+  --accent-purple-dark: #9333ea;
+  --text-white: #ffffff;
+  --text-muted: #94a3b8;
+  --text-secondary: #cbd5e1;
+  --border-color: rgba(71, 85, 105, 0.5);
+  --border-color-strong: #475569;
+  --border-hover: #64748b;
+  --card-bg: rgba(71, 85, 105, 0.3);
+  --navbar-bg: rgba(15, 23, 42, 0.8);
+  --tag-bg: rgba(71, 85, 105, 0.5);
+  --year-bg: rgba(59, 130, 246, 0.2);
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -8,11 +31,34 @@ html {
   box-sizing: border-box;
 }
 
+/* Hareket azaltma tercihi olan kullanıcılar için */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 .App {
+  font-family: var(--font-family);
   text-align: center;
-  background: linear-gradient(to bottom, #0f172a, #1e293b, #0f172a);
-  color: white;
+  background: linear-gradient(to bottom, var(--bg-dark), var(--bg-medium), var(--bg-dark));
+  color: var(--text-white);
   min-height: 100vh;
+}
+
+/* Focus-visible - klavye erişilebilirliği */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
 }
 
 /* Navigation */
@@ -21,9 +67,9 @@ html {
   width: 100%;
   top: 0;
   z-index: 50;
-  background: rgba(15, 23, 42, 0.8);
+  background: var(--navbar-bg);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(71, 85, 105, 0.5);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .navbar-container {
@@ -38,7 +84,8 @@ html {
 .navbar-title {
   font-size: 1.5rem;
   font-weight: bold;
-  background: linear-gradient(to right, #60a5fa, #a855f7);
+  color: var(--accent-blue); /* fallback: background-clip desteklenmezse görünür */
+  background: linear-gradient(to right, var(--accent-blue), var(--accent-purple));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -50,18 +97,18 @@ html {
 }
 
 .navbar-links a {
-  color: white;
+  color: var(--text-white);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .navbar-links a:hover {
-  color: #60a5fa;
+  color: var(--accent-blue);
 }
 
 /* Hero Section */
 .hero {
-  padding: 8rem 2rem 4rem;
+  padding: 4rem 2rem 2rem;
   text-align: center;
 }
 
@@ -71,8 +118,8 @@ html {
 }
 
 .hero-emoji {
-  font-size: 4rem;
-  margin-bottom: 2rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .hero-title {
@@ -84,59 +131,16 @@ html {
 
 .hero-description {
   font-size: 1.25rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   margin-bottom: 2rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn-primary {
-  padding: 0.75rem 2rem;
-  background-color: #3b82f6;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #2563eb;
-}
-
-.btn-secondary {
-  padding: 0.75rem 2rem;
-  background-color: transparent;
-  color: white;
-  border: 1px solid #60a5fa;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: rgba(96, 165, 250, 0.1);
-}
-
 /* Projects Section */
 .projects-section {
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
   background: rgba(0, 0, 0, 0.3);
 }
 
@@ -163,8 +167,8 @@ html {
 
 .section-btn {
   padding: 0.75rem 2rem;
-  background-color: #475569;
-  color: #cbd5e1;
+  background-color: var(--border-color-strong);
+  color: var(--text-secondary);
   border: none;
   border-radius: 0.5rem;
   font-size: 1rem;
@@ -174,12 +178,12 @@ html {
 }
 
 .section-btn:hover {
-  background-color: #64748b;
+  background-color: var(--border-hover);
 }
 
 .section-btn.active {
-  background: linear-gradient(to right, #a855f7, #9333ea);
-  color: white;
+  background: linear-gradient(to right, var(--accent-purple), var(--accent-purple-dark));
+  color: var(--text-white);
 }
 
 /* Category Filters */
@@ -193,8 +197,8 @@ html {
 
 .category-btn {
   padding: 0.5rem 1.5rem;
-  background-color: #475569;
-  color: #cbd5e1;
+  background-color: var(--border-color-strong);
+  color: var(--text-secondary);
   border: none;
   border-radius: 0.5rem;
   font-size: 0.95rem;
@@ -204,12 +208,12 @@ html {
 }
 
 .category-btn:hover {
-  background-color: #64748b;
+  background-color: var(--border-hover);
 }
 
 .category-btn.active {
-  background-color: #3b82f6;
-  color: white;
+  background-color: var(--accent-blue-dark);
+  color: var(--text-white);
 }
 
 /* Project Grid */
@@ -220,27 +224,34 @@ html {
   align-items: start;
 }
 
+/* Tablet: 2 sütun */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Project Card */
 .project-card {
-  background-color: rgba(71, 85, 105, 0.3);
-  border: 1px solid rgba(71, 85, 105, 0.5);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 0.75rem;
   overflow: hidden;
   transition: all 0.3s ease;
-  height: 480px;
+  min-height: 500px;
   display: flex;
   flex-direction: column;
 }
 
 .project-card:hover {
-  border-color: #60a5fa;
+  border-color: var(--accent-blue);
   box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
 }
 
 .project-image {
-  height: 200px;
+  height: 250px;
   overflow: hidden;
-  border-bottom: 1px solid rgba(71, 85, 105, 0.5);
+  border-bottom: 1px solid var(--border-color);
   flex-shrink: 0;
 }
 
@@ -273,31 +284,31 @@ html {
 }
 
 .project-title {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
   text-align: left;
 }
 
 .project-role {
-  font-size: 0.875rem;
-  color: #60a5fa;
+  font-size: 1rem;
+  color: var(--accent-blue);
   margin: 0.5rem 0 0 0;
   text-align: left;
 }
 
 .project-year {
-  font-size: 0.75rem;
-  background-color: rgba(59, 130, 246, 0.2);
-  color: #60a5fa;
+  font-size: 0.8rem;
+  background-color: var(--year-bg);
+  color: var(--accent-blue);
   padding: 0.25rem 0.75rem;
   border-radius: 0.25rem;
   white-space: nowrap;
 }
 
 .project-description {
-  font-size: 0.95rem;
-  color: #cbd5e1;
+  font-size: 1rem;
+  color: var(--text-secondary);
   margin: 1rem 0;
   text-align: left;
   line-height: 1.6;
@@ -313,8 +324,8 @@ html {
 
 .tech-tag {
   font-size: 0.75rem;
-  background-color: rgba(71, 85, 105, 0.5);
-  color: #cbd5e1;
+  background-color: var(--tag-bg);
+  color: var(--text-secondary);
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
 }
@@ -322,16 +333,16 @@ html {
 /* Project Link */
 .project-link {
   display: inline-block;
-  color: #60a5fa;
+  color: var(--accent-blue);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1.rem;
   font-weight: 500;
   margin-top: auto;
   transition: color 0.3s ease;
 }
 
 .project-link:hover {
-  color: #93c5fd;
+  color: var(--accent-blue-light);
 }
 
 /* Empty State */
@@ -339,15 +350,15 @@ html {
   grid-column: 1 / -1;
   padding: 3rem;
   text-align: center;
-  color: #94a3b8;
+  color: var(--text-muted);
   font-size: 1.1rem;
 }
 
 /* Footer */
 .footer {
-  border-top: 1px solid rgba(71, 85, 105, 0.5);
+  border-top: 1px solid var(--border-color);
   padding: 2rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   font-size: 0.95rem;
   text-align: center;
 }
@@ -379,7 +390,7 @@ html {
   }
 
   .project-card {
-    height: auto;
+    min-height: auto;
   }
 
   .section-buttons {
@@ -417,15 +428,6 @@ html {
 @media (max-width: 480px) {
   .hero-title {
     font-size: 2rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
   }
 
   .navbar-title {
