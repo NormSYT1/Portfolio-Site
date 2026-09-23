@@ -124,7 +124,19 @@ const projects = [
     link: 'https://normsyt1.github.io/REACT-FOOD-SITE/',
     year: 2026,
     role: 'Full Stack Developer'
-  }
+  },
+  {
+  id: 30,
+  title: 'Dark UI Settings Menu',
+  image: process.env.PUBLIC_URL + '/images/Dark_UI.png',
+  category: 'other', 
+  section: 'personal', 
+  description: 'Korku oyunu temalı bir ayarlar menüsü yapımı, kullanıcı dostu ve modern bir arayüz sunar.',
+  technologies: ['Unity','Figma'],
+  link: 'https://assetstore.unity.com/packages/2d/gui/dark-horror-themed-ui-396360',
+  year: 2026,
+  role: 'Solo Game Developer'
+}
 ];
 
 function ProjectCard({ project }) {
@@ -228,18 +240,22 @@ function App() {
           </div>
 
           {/* Category Filters */}
-          <div className="category-filters">
-            {['game', 'software'].map(cat => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                aria-pressed={activeCategory === cat}
-                className={`category-btn ${activeCategory === cat ? 'active' : ''}`}
-              >
-                {cat === 'game' ? '🎮 Oyun' : '💻 Yazılım'}
-              </button>
-            ))}
-          </div>
+            <div className="category-filters">
+              {[
+                { id: 'game', label: '🎮 Oyun' },
+                { id: 'software', label: '💻 Yazılım' },
+                { id: 'other', label: '📁 Diğer' } // <-- Yeni eklenen buton
+              ].map(cat => (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  aria-pressed={activeCategory === cat.id}
+                  className={`category-btn ${activeCategory === cat.id ? 'active' : ''}`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
 
           {/* Project Grid */}
           <div className="project-grid">
