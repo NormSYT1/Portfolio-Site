@@ -37,7 +37,7 @@ const projects = [
     description: 'Zamana karşı yarış, ekrandaki tüm balonları patlatarak en yüksek skoru elde et.',
     technologies: ['Unity', 'C#'],
     link: 'https://normsyt1.itch.io/balloon-popping-game',
-    year: 2024,
+    year: 2025,
     role: 'Solo Game Developer'
   },
   {
@@ -136,7 +136,20 @@ const projects = [
   link: 'https://assetstore.unity.com/packages/2d/gui/dark-horror-themed-ui-396360',
   year: 2026,
   role: 'Solo Game Developer'
-}
+  },
+  {
+  id: 31,
+  title: 'Water Surface',
+  image: process.env.PUBLIC_URL + '/images/Water_Surface.png',
+  category: 'other', 
+  section: 'personal', 
+  description: 'Su yüzeyi ve su altı efekti yapımı, gerçekçi su efektleri ve görsel deneyim sunar.',  
+  technologies: ['Unity'],
+  link: 'https://assetstore.unity.com/packages/3d/environments/water-surface-underwater-system-built-in-rp-396850',
+  year: 2026,
+  role: 'Solo Game Developer'
+  },
+
 ];
 
 function ProjectCard({ project }) {
